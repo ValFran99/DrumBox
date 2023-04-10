@@ -19,3 +19,13 @@ code {
   width: fit-content;
   height: fit-content;
 }
+
+.App{
+  text-align: center;
+  border: 1px solid black;
+  width: fit-content;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15%;
+}
