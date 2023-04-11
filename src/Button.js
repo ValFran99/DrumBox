@@ -12,7 +12,8 @@ class Button extends React.Component{
   }
 
   playSound(){
-    let audioFile = document.getElementById(this.props.filePath);
+    this.props.displayButtonPressed(this.props.fileName)
+    let audioFile = document.getElementById(this.props.keyToCheck.toUpperCase());
     audioFile.volume = this.props.volume / 100;
     audioFile.pause();
     audioFile.currentTime = 0;
@@ -20,19 +21,17 @@ class Button extends React.Component{
   }
 
   handleClick(event){
-    if(event.key === this.props.keyToCheck){
+    if(event.key === this.props.keyToCheck || event.key === this.props.keyToCheck.toUpperCase()){
       this.playSound();
     }
   }
-
   render() {
+    var innerText = this.props.keyToCheck.toUpperCase();
     return(
-      <div className="drum-pad">
+      <div className="drum-pad" id={this.props.fileName}>
         <button onClick={this.playSound}>
-          {this.props.keyToCheck.toUpperCase()}
-          <audio id={this.props.filePath}>
-            <source src={this.props.filePath}/>
-          </audio>
+          {innerText}
+          <audio id={innerText} className="clip" src={this.props.filePath}></audio>
         </button>
         
       </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import Display from './Display';
 
 class ControlPanel extends React.Component{
   constructor(props){
@@ -12,8 +11,6 @@ class ControlPanel extends React.Component{
   render() {
     return(
       <div className="control-panel" id='control-panel'>
-        <Display 
-        displayThis={this.props.volume} />
         <input type="range" name="volume" id='volume' min={0} max={100} value={this.props.volume} onChange={this.getSliderValue}/>
         <label htmlFor="volume">Volume</label>
       </div>
