@@ -12,9 +12,11 @@ class Button extends React.Component{
   }
 
   playSound(){
-    document.getElementById("myFile").pause();
-    document.getElementById("myFile").currentTime = 0;
-    document.getElementById("myFile").play();
+    let audioFile = document.getElementById(this.props.filePath);
+    audioFile.volume = this.props.volume / 100;
+    audioFile.pause();
+    audioFile.currentTime = 0;
+    audioFile.play();
   }
 
   handleClick(event){
@@ -25,11 +27,14 @@ class Button extends React.Component{
 
   render() {
     return(
-      <div className="button-wrapper">
-        <button onClick={this.playSound}>Click!</button>
-        <audio id="myFile">
-          <source src={this.props.filePath}/>
-        </audio>
+      <div className="drum-pad">
+        <button onClick={this.playSound}>
+          {this.props.keyToCheck.toUpperCase()}
+          <audio id={this.props.filePath}>
+            <source src={this.props.filePath}/>
+          </audio>
+        </button>
+        
       </div>
     )
   }
