@@ -3,9 +3,6 @@ import React from "react";
 class Button extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
-      audioFilePath: props.filePath
-    }
     this.handleClick = this.handleClick.bind(this);
     this.playSound = this.playSound.bind(this);
   }
@@ -21,7 +18,7 @@ class Button extends React.Component{
   }
 
   handleClick(event){
-    if(event.key === "q"){
+    if(event.key === this.props.keyToCheck){
       this.playSound();
     }
   }
@@ -31,7 +28,7 @@ class Button extends React.Component{
       <div className="button-wrapper">
         <button onClick={this.playSound}>Click!</button>
         <audio id="myFile">
-          <source src={this.state.audioFilePath}/>
+          <source src={this.props.filePath}/>
         </audio>
       </div>
     )

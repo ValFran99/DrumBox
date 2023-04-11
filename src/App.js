@@ -6,7 +6,9 @@ import Button from "./Button"
 function App() {
   return (
     <div className="App" id='drum-machine'>
-      <Button filePath="./KICK_1.mp3"/>
+      <Button 
+      filePath="./KICK_1.mp3" 
+      keyToCheck="q" />
       <ControlPanel />
     </div>
   );
