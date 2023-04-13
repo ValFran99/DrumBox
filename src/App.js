@@ -39,8 +39,8 @@ const SOUNDBANKS = [
       fileName: "Kick"
     },
     {
-      filePath: "./sounds/soundFont1/OPEN_HH.mp3",
-      fileName: "Open HH"
+      filePath: "./sounds/soundFont1/CLOSED_HH.mp3",
+      fileName: "Closed HH HH"
     }
   ],
   [
