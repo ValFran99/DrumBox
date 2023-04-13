@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/DrumBox/static/css/main.eeb8054b.css",
-    "main.js": "/DrumBox/static/js/main.667bf8e6.js",
+    "main.js": "/DrumBox/static/js/main.13c45025.js",
     "index.html": "/DrumBox/index.html",
     "main.eeb8054b.css.map": "/DrumBox/static/css/main.eeb8054b.css.map",
-    "main.667bf8e6.js.map": "/DrumBox/static/js/main.667bf8e6.js.map"
+    "main.13c45025.js.map": "/DrumBox/static/js/main.13c45025.js.map"
   },
   "entrypoints": [
     "static/css/main.eeb8054b.css",
-    "static/js/main.667bf8e6.js"
+    "static/js/main.13c45025.js"
   ]
 }
