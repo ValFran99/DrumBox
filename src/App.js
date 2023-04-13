@@ -6,39 +6,39 @@ import Display from './Display';
 const SOUNDBANKS = [
   [
     {
-      filePath: "drumbox/sounds/soundFont1/HEATER_1.mp3",
+      filePath: "./sounds/soundFont1/HEATER_1.mp3",
       fileName: "Heater 1"
     },
     {
-      filePath: "drumbox/sounds/soundFont1/HEATER_2.mp3",
+      filePath: "./sounds/soundFont1/HEATER_2.mp3",
       fileName: "Heater 2"
     },
     {
-      filePath: "drumbox/sounds/soundFont1/HEATER_3.mp3",
+      filePath: "./sounds/soundFont1/HEATER_3.mp3",
       fileName: "Heater 3"
     },
     {
-      filePath: "drumbox/sounds/soundFont1/HEATER_4.mp3",
+      filePath: "./sounds/soundFont1/HEATER_4.mp3",
       fileName: "Heater 4"
     },
     {
-      filePath: "drumbox/sounds/soundFont1/CLAP.mp3",
+      filePath: "./sounds/soundFont1/CLAP.mp3",
       fileName: "Clap"
     },
     {
-      filePath: "drumbox/sounds/soundFont1/OPEN_HH.mp3",
+      filePath: "./sounds/soundFont1/OPEN_HH.mp3",
       fileName: "Open HH"
     },
     {
-      filePath: "drumbox/sounds/soundFont1/KICK_N_HAT.mp3",
+      filePath: "./sounds/soundFont1/KICK_N_HAT.mp3",
       fileName: "Kick n' Hat"
     },
     {
-      filePath: "drumbox/sounds/soundFont1/KICK_1.mp3",
+      filePath: "./sounds/soundFont1/KICK_1.mp3",
       fileName: "Kick"
     },
     {
-      filePath: "drumbox/sounds/soundFont1/CLOSED_HH.mp3",
+      filePath: "./sounds/soundFont1/CLOSED_HH.mp3",
       fileName: "Closed HH"
     }
   ],
