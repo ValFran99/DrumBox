@@ -6,6 +6,10 @@ class Button extends React.Component{
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.playSound = this.playSound.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.setActive = this.setActive.bind(this);
+    this.state = {
+      active: false
+    }
   }
 
   componentDidMount(){
@@ -16,18 +20,24 @@ class Button extends React.Component{
     document.removeEventListener("keydown", this.handleKeyDown)
   }
 
-  shouldComponentUpdate(nextProps){
-    if(
-      this.props.filePath === nextProps.filePath &&
-      this.props.keyToCheck === nextProps.keyToCheck &&
-      this.props.volume === nextProps.volume &&
-      this.props.fileName === nextProps.fileName &&
-      this.props.displayButtonPressed === nextProps.displayButtonPressed
-    ){
-      return false;
-    }
-    return true;
+  setActive(bool){
+    this.setState({
+      active: bool
+    })
   }
+
+  // shouldComponentUpdate(nextProps){
+  //   if(
+  //     this.props.filePath === nextProps.filePath &&
+  //     this.props.keyToCheck === nextProps.keyToCheck &&
+  //     this.props.volume === nextProps.volume &&
+  //     this.props.fileName === nextProps.fileName &&
+  //     this.props.displayButtonPressed === nextProps.displayButtonPressed
+  //   ){
+  //     return false;
+  //   }
+  //   return true;
+  // }
 
   playSound(){
     this.props.displayButtonPressed(this.props.fileName)
@@ -40,18 +50,24 @@ class Button extends React.Component{
 
   handleKeyDown(event){
     if(event.key === this.props.keyToCheck || event.key === this.props.keyToCheck.toUpperCase()){
-      this.playSound();
+      this.playSound()
+      this.setActive(true)
+      setTimeout( () => this.setActive(false), 100)
     }
   }
 
   handleClick(){
     this.playSound()
+    this.setActive(true)
+    setTimeout( () => this.setActive(false), 100)
   }
 
   render() {
     var innerText = this.props.keyToCheck.toUpperCase();
     return(
-      <div className="drum-pad" id={this.props.fileName} onClick={this.handleClick}>
+      <div className="drum-pad" id={this.props.fileName} onClick={this.handleClick} style={{
+        backgroundColor: this.state.active ? "yellow" : "grey",
+        paddingTop: this.state.active ? 12 : 9}}>
         {innerText}
         <audio id={innerText} className="clip" src={this.props.filePath}></audio> 
       </div>
