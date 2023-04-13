@@ -26,19 +26,6 @@ class Button extends React.Component{
     })
   }
 
-  // shouldComponentUpdate(nextProps){
-  //   if(
-  //     this.props.filePath === nextProps.filePath &&
-  //     this.props.keyToCheck === nextProps.keyToCheck &&
-  //     this.props.volume === nextProps.volume &&
-  //     this.props.fileName === nextProps.fileName &&
-  //     this.props.displayButtonPressed === nextProps.displayButtonPressed
-  //   ){
-  //     return false;
-  //   }
-  //   return true;
-  // }
-
   playSound(){
     this.props.displayButtonPressed(this.props.fileName)
     let audioFile = document.getElementById(this.props.keyToCheck.toUpperCase());
@@ -65,9 +52,13 @@ class Button extends React.Component{
   render() {
     var innerText = this.props.keyToCheck.toUpperCase();
     return(
-      <div className="drum-pad" id={this.props.fileName} onClick={this.handleClick} style={{
-        backgroundColor: this.state.active ? "yellow" : "grey",
-        paddingTop: this.state.active ? 12 : 9}}>
+      <div 
+        className="drum-pad" id={this.props.fileName} 
+        onClick={this.handleClick} 
+        style={{
+          backgroundColor: this.state.active ? "yellow" : "grey",
+          paddingTop: this.state.active ? 12 : 9}
+        }>
         {innerText}
         <audio id={innerText} className="clip" src={this.props.filePath}></audio> 
       </div>

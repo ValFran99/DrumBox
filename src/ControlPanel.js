@@ -11,8 +11,12 @@ class ControlPanel extends React.Component{
   render() {
     return(
       <div className="control-panel" id='control-panel'>
-        <input type="range" name="volume" id='volume' min={0} max={100} value={this.props.volume} onChange={this.getSliderValue}/>
-        {/* <label htmlFor="volume">Volume</label> */}
+        <input 
+        type="range" name="volume" id='volume' 
+        min={0} max={100} 
+        value={this.props.volume} 
+        onChange={this.getSliderValue}
+        />
       </div>
     )
   }
